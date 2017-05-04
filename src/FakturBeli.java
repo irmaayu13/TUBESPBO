@@ -1,5 +1,7 @@
 /**
- * Created by Rima Yuliana on 12/04/2017.
+ * Created by Toshiba on 12/04/2017.
+ *
+ * Irma Ayu Aryani
  */
 public abstract class FakturBeli {
 

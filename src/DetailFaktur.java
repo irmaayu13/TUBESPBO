@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 /**
  *Created by Toshiba
+ * Irma Ayu Aryani
  */
 public class DetailFaktur extends FakturBeli {
         String no_fakturbeli;
