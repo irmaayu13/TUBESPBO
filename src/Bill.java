@@ -17,19 +17,19 @@ public class Bill {
     Makanan mkn;
     Minuman mi;
     Obat ob;
-    Sembako sm;
+    ProdukKebersihan pk;
 
     ArrayList<Produk> daftarProduk = new ArrayList<>();
 
 
-    public Bill(String idbill,int idpetugas, String tgl_transaksi, Makanan mkn, Minuman mi, Obat ob, Sembako sm) {
+    public Bill(String idbill,int idpetugas, String tgl_transaksi, Makanan mkn, Minuman mi, Obat ob, ProdukKebersihan pk) {
         this.idbill=idbill;
         this.tgl_transaksi=tgl_transaksi;
         this.idpetugas=idpetugas;
         this.mkn=mkn;
         this.mi=mi;
         this.ob=ob;
-        this.sm=sm;
+        this.pk=pk;
     }
 
     public void addProduk(Produk p) {
@@ -50,14 +50,14 @@ public class Bill {
     public static void main(String[] Args){
         Makanan mk = new Makanan( 1, "Indomie","Mie Instan",5,2300);
         Minuman mi = new Minuman(2, "Ultramilk","Susu",3,2300);
-        Sembako sm = new Sembako( 3, "Cap Ayam Jago","Beras",1,55000);
+        ProdukKebersihan pk = new ProdukKebersihan( 3, "Cap Ayam Jago","Beras",1,55000);
         Obat ob = new Obat(4, "Oskadon","Sakit Kepala",1,2300);
-        Bill bill = new Bill("001", 001, "02-04-2017",mk,mi,ob,sm);
+        Bill bill = new Bill("001", 001, "02-04-2017",mk,mi,ob,pk);
 
         bill.addProduk(mk);
         bill.addProduk(mi);
         bill.addProduk(ob);
-        bill.addProduk(sm);
+        bill.addProduk(pk);
         bill.print();
 
     }

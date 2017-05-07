@@ -19,7 +19,7 @@ public class ReturBeli {
     Makanan mkn;
     Minuman mi;
     Obat ob;
-    Sembako sm;
+    ProdukKebersihan sm;
 
     public void addProduk(Produk p) {
         //tambah produk ke array
@@ -77,7 +77,7 @@ public class ReturBeli {
     public static void main(String[] Args){
         Makanan mk = new Makanan( 1, "Indomie","Mie Instan",2000,10,2300);
         Minuman mi = new Minuman(2, "Ultramilk","Susu",2000,10,2300);
-        Sembako sm = new Sembako( 3, "Cap Ayam Jago","Beras",40000,10,55000);
+        ProdukKebersihan sm = new ProdukKebersihan( 3, "Cap Ayam Jago","Beras",40000,10,55000);
         Obat ob = new Obat(4, "Oskadon","Sakit Kepala",2000,10,2300);
         ReturBeli drb = new ReturBeli(1,"05-05-2017","Kadaluarsa",2,2,2,2,mk,mi,ob,sm);
         drb.addProduk(mk);

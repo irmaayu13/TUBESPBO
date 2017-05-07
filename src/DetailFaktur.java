@@ -13,7 +13,7 @@ public class DetailFaktur extends FakturBeli {
         Makanan mkn;
         Minuman mi;
         Obat ob;
-        Sembako sm;
+        ProdukKebersihan pk;
 
     public void addProduk(Produk p) {
         //tambah produk ke array
@@ -25,14 +25,14 @@ public class DetailFaktur extends FakturBeli {
     }
 
 
-    public DetailFaktur(String no_fakturbeli, int jumlah_fakturbeli, String tgl_masuk, Makanan mkn, Minuman mi, Obat ob, Sembako sm) {
+    public DetailFaktur(String no_fakturbeli, int jumlah_fakturbeli, String tgl_masuk, Makanan mkn, Minuman mi, Obat ob, ProdukKebersihan pk) {
         this.no_fakturbeli=no_fakturbeli;
         this.jumlah_fakturbeli=jumlah_fakturbeli;
         this.tgl_masuk=tgl_masuk;
         this.mkn=mkn;
         this.mi=mi;
         this.ob=ob;
-        this.sm=sm;
+        this.pk=pk;
     }
     @Override
         public double totalFakturbeli() {
@@ -65,13 +65,13 @@ public class DetailFaktur extends FakturBeli {
         public static void main(String[] Args){
             Makanan mk = new Makanan( 1, "Indomie","Mie Instan",2000,10,2300);
             Minuman mi = new Minuman(2, "Ultramilk","Susu",2000,10,2300);
-            Sembako sm = new Sembako( 3, "Cap Ayam Jago","Beras",40000,10,55000);
+            ProdukKebersihan pk = new ProdukKebersihan( 3, "Cap Ayam Jago","Beras",40000,10,55000);
             Obat ob = new Obat(4, "Oskadon","Sakit Kepala",2000,10,2300);
 
-            DetailFaktur dfb = new DetailFaktur("F001", 12, "02-04-2017",mk,mi,ob,sm);
+            DetailFaktur dfb = new DetailFaktur("F001", 12, "02-04-2017",mk,mi,ob,pk);
             dfb.addProduk(mk);
             dfb.addProduk(mi);
-            dfb.addProduk(sm);
+            dfb.addProduk(pk);
             dfb.addProduk(ob);
             dfb.print();
             dfb.cariBarang(1);

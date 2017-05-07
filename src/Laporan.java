@@ -11,13 +11,13 @@ public class Laporan {
     ArrayList<Produk> daftarProduk = new ArrayList<>();
     ArrayList<FakturBeli> daftarFaktur = new ArrayList<>();
     ArrayList<ReturBeli> daftarRetur = new ArrayList<>();
-    ArrayList<Billing> daftarBill = new ArrayList<>();
+    ArrayList<Bill> daftarBill = new ArrayList<>();
 
     Makanan mkn;
     Minuman mi;
     Obat ob;
-    Sembako sm;
-    Billing bill;
+    ProdukKebersihan pk;
+    Bill bill;
     DetailFaktur df;
     ReturBeli rb;
 
@@ -32,7 +32,7 @@ public class Laporan {
     }
 
 
-    public Laporan(String no_laporan,String tgl_laporan,Billing b, DetailFaktur df, ReturBeli rb) {
+    public Laporan(String no_laporan,String tgl_laporan,Bill b, DetailFaktur df, ReturBeli rb) {
         this.no_laporan=no_laporan;
         this.tgl_laporan=tgl_laporan;
         this.bill=b;
@@ -70,11 +70,6 @@ public class Laporan {
         }
         return total;
     }
-
-
-
-
-
     public void print() {
         System.out.println("No. Faktur Beli : "+no_laporan);
         System.out.println("Tanggal Masuk : "+tgl_laporan);
@@ -96,15 +91,15 @@ public class Laporan {
     public static void main(String[] Args){
         Makanan mk = new Makanan( 1, "Indomie","Mie Instan",2000,10,2300);
         Minuman mi = new Minuman(2, "Ultramilk","Susu",2000,10,2300);
-        Sembako sm = new Sembako( 3, "Cap Ayam Jago","Beras",40000,10,55000);
+        ProdukKebersihan pk = new ProdukKebersihan( 3, "Cap Ayam Jago","Beras",40000,10,55000);
         Obat ob = new Obat(4, "Oskadon","Sakit Kepala",2000,10,2300);
-        DetailFaktur dfb = new DetailFaktur("F001", 12, "02-04-2017",mk,mi,ob,sm);
-        Billing bill = new Billing("001", 001, "02-04-2017",mk,mi,ob,sm);
+        DetailFaktur dfb = new DetailFaktur("F001", 12, "02-04-2017",mk,mi,ob,pk);
+        Bill bill = new Bill("001", 001, "02-04-2017",mk,mi,ob,pk);
 
 
         dfb.addProduk(mk);
         dfb.addProduk(mi);
-        dfb.addProduk(sm);
+        dfb.addProduk(pk);
         dfb.addProduk(ob);
         dfb.print();
         dfb.cariBarang(1);
@@ -119,7 +114,7 @@ public class Laporan {
         ReturBeli drb = new ReturBeli(1,"05-05-2017","Kadaluarsa",2,2,2,2,mk,mi,ob,sm);
         drb.addProduk(mk);
         drb.addProduk(mi);
-        drb.addProduk(sm);
+        drb.addProduk(pk);
         drb.addProduk(ob);
         drb.print();
         drb.cariBarang(1);

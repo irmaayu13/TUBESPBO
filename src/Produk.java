@@ -10,7 +10,7 @@ public abstract class Produk {
    Makanan makanan;
    Minuman minuman;
    Obat obat;
-   Sembako sembako;
+   ProdukKebersihan pk;
     int stock;
     int hargabeli;
     int hargajual;
